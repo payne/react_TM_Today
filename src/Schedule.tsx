@@ -41,14 +41,14 @@ function GetAssigned(schedule: any[], date: string) {
     }, {});
 
     // This looks good! Even has '' for people with no roles assigned
-    console.log(roleToPerson);
+    // console.log(roleToPerson);
 
     const assginments: string[] = [];
     const meetingOrder = MeetingOrder();
     for (const role in meetingOrder) {
-        console.log(`for role ${role} roleToPerson[role] is ${roleToPerson[role]}`);
+        // console.log(`for role ${role} roleToPerson[role] is ${roleToPerson[role]}`);
         if (roleToPerson[role]) {
-            roleToPerson[role].array.forEach( (person: string) => {
+            roleToPerson[role].forEach( (person: string) => {
                 assginments.push(`${role}: ${person}`);
             });
         }
