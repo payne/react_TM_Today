@@ -22,6 +22,11 @@ describe('Slices meeting schedule data correctly', () => {
         const schedule = Schedule();
         const assignments = GetAssigned(schedule, "3/29");
         expect(assignments.length).toBe(16);
+        /* This looks good:
+        assignments.forEach( (assignment) => {
+            console.log(assignment);
+        });
+        */
     });
 
     test('There are 10 dates', () => {
