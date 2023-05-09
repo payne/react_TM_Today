@@ -18,6 +18,11 @@ function MeetingOrder() {
     return meetingOrder;
 }
 
+function GetDates(schedule: any[]) {
+    const dates = Object.keys(schedule[0]);
+    return dates.slice(2);
+}
+
 function Schedule() {
     return  [
 {"First Name":"Shelly","Last Name":"Anzalone","3/29": "GR", "4/5":"S","4/12":"E","4/19":"","4/26":"T","5/3":"","5/10":"BC","5/17":"","5/24":"S","5/31":"E"},
@@ -46,4 +51,4 @@ function Schedule() {
 ];
 }
 
-export { MeetingOrder, Schedule };
+export { MeetingOrder, Schedule , GetDates};
