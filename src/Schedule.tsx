@@ -1,6 +1,24 @@
 
 
-export default function Schedule() {
+function MeetingOrder() {
+    const meetingOrder = {
+                      'PO': 'Presiding Officer',
+                      'I': 'Invocator',
+                      'GR': 'Grammarian',
+                      'J': 'Jester',
+                      'TT': 'Table Topics',
+                      'T': 'Timer', 
+                      'TM': 'Toastmaster',
+                      'CE': 'General Evaluator',
+                      'S': 'Speaker',
+                      'E': 'Evaluator',
+                      'BC': 'Vote Counter',
+                      'GT': 'Grunt Tabulator'
+                    };
+    return meetingOrder;
+}
+
+function Schedule() {
     return  [
 {"First Name":"Shelly","Last Name":"Anzalone","3/29": "GR", "4/5":"S","4/12":"E","4/19":"","4/26":"T","5/3":"","5/10":"BC","5/17":"","5/24":"S","5/31":"E"},
 {"First Name":"Suzie","Last Name":"Bremer","3/29": "", "4/5":"I","4/12":"S","4/19":"","4/26":"","5/3":"T","5/10":"","5/17":"BC","5/24":"","5/31":"S"},
@@ -27,3 +45,5 @@ export default function Schedule() {
 {"First Name":"Keith","Last Name":"Wilbur","3/29": "S", "4/5":"X","4/12":"","4/19":"T","4/26":"","5/3":"BC","5/10":"","5/17":"S","5/24":"E","5/31":"TT"}
 ];
 }
+
+export { MeetingOrder, Schedule };

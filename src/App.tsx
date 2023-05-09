@@ -1,13 +1,10 @@
-import { useState } from 'react'
 import { Routes, Route, Outlet, Link } from "react-router-dom";
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { Assigned } from './components/Assigned';
 import { Unassigned } from './components/Unassigned';
+import { Home } from "./components/Home";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -26,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/assigned" element={<Assigned />} />
         <Route path="/unassigned" element={<Unassigned />} />
+        <Route path="/" element={<Home />} />
       </Routes>
       
     </>
