@@ -48,7 +48,12 @@ function Schedule() {
 {"First Name":"Anitha","Last Name":"Teekaraman","3/29": "", "4/5":"T","4/12":"","4/19":"BC","4/26":"","5/3":"S","5/10":"E","5/17":"TT","5/24":"","5/31":"TM"},
 {"First Name":"Andrew","Last Name":"Wesely","3/29": "E", "4/5":"","4/12":"T","4/19":"","4/26":"BC","5/3":"","5/10":"S","5/17":"E","5/24":"TT","5/31":""},
 {"First Name":"Keith","Last Name":"Wilbur","3/29": "S", "4/5":"X","4/12":"","4/19":"T","4/26":"","5/3":"BC","5/10":"","5/17":"S","5/24":"E","5/31":"TT"}
-];
+].map((item) => {
+    let lastName = item["Last Name"];
+    lastName = lastName.slice(0,1);
+    item["Last Name"] = lastName;
+    return item;
+});
 }
 
 export { MeetingOrder, Schedule , GetDates};
