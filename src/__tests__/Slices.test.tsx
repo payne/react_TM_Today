@@ -1,5 +1,5 @@
 
-import { Schedule, MeetingOrder, GetDates } from '../Schedule';
+import { Schedule, MeetingOrder, GetDates, GetAssigned } from '../Schedule';
 
 describe('Slices meeting schedule data correctly', () => {
     test('There are 23 people in the schedule', () => {
@@ -13,9 +13,15 @@ describe('Slices meeting schedule data correctly', () => {
         expect(lastName.length).toBe(1);
     });
         
-    test('There are 23 people in the schedule', () => {
+    test('There are 12 assigned roles in a meeting', () => {
         const meeting = MeetingOrder();
         expect(Object.values(meeting).length).toBe(12);
+    });
+
+    test('There are 16 people with assigned roles in a meeting', () => {
+        const schedule = Schedule();
+        const assignments = GetAssigned(schedule, "3/29");
+        expect(assignments.length).toBe(16);
     });
 
     test('There are 10 dates', () => {
