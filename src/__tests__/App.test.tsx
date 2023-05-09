@@ -21,17 +21,6 @@ test('Renders main page correctly', async () => {
   // Init
   await user.click(buttonCount);
   await user.click(buttonCount);
-  user.click(buttonCount).then(() => {
-    console.log('clicked');
-  }).catch((err) => {
-    console.log(err);
-  }).finally(() => {
-    console.log('finally');
-  });
-
-  user.click(buttonCount).then(() => {
-    console.log('clicked');
-  });
 
   // Post Expectations
   expect(buttonCount.innerHTML).toBe('count is: 2');
