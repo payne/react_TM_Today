@@ -1,5 +1,5 @@
 
-import { Schedule, MeetingOrder, GetDates, GetAssigned } from '../Schedule';
+import { Schedule, MeetingOrder, GetDates, GetAssigned, getUnassigned } from '../Schedule';
 
 describe('Slices meeting schedule data correctly', () => {
     test('There are 23 people in the schedule', () => {
@@ -41,7 +41,8 @@ describe('Slices meeting schedule data correctly', () => {
 
         const schedule = Schedule();
         expect(schedule.length).toBe(23);
-        const reducedSchedule = schedule.filter((person) => !person['3/29']);
+
+        const reducedSchedule = getUnassigned("3/29", schedule);
         expect(reducedSchedule.length).toBe(7);
         console.log('schedule',schedule);
     /*

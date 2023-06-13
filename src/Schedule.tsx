@@ -89,5 +89,7 @@ function Schedule() {
     return item;
 });
 }
-
-export { MeetingOrder, Schedule , GetDates, GetAssigned};
+const getUnassigned = (d: string, schedule: Array<any>): Array<any> => {
+    return schedule.filter((person) => !person[d]);
+}
+export { MeetingOrder, Schedule , GetDates, GetAssigned, getUnassigned};
