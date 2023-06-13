@@ -37,7 +37,21 @@ describe('Slices meeting schedule data correctly', () => {
         expect(dates).toEqual(theseDates);
     });
 
+    test('The dates', () => {
 
+        const schedule = Schedule();
+        expect(schedule.length).toBe(23);
+        const reducedSchedule = schedule.filter((person) => !person['3/29']);
+        expect(reducedSchedule.length).toBe(7);
+        console.log('schedule',schedule);
+    /*
+        const schedule = Schedule();
+        const dates = GetDates(schedule);
+        expect(dates.length).toBe(10);
+        const theseDates = ["3/29", "4/5", "4/12", "4/19", "4/26", "5/3", "5/10", "5/17", "5/24", "5/31"];
+        expect(dates).toEqual(theseDates);
+     */
+    });
 
 });
 
