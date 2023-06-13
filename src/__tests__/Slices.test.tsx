@@ -1,5 +1,5 @@
 
-import { Schedule, MeetingOrder, GetDates, GetAssigned } from '../Schedule';
+import { Schedule, MeetingOrder, GetDates, GetAssigned, getUnassigned } from '../Schedule';
 
 describe('Slices meeting schedule data correctly', () => {
     test('There are 23 people in the schedule', () => {
@@ -37,7 +37,22 @@ describe('Slices meeting schedule data correctly', () => {
         expect(dates).toEqual(theseDates);
     });
 
+    test('The dates', () => {
 
+        const schedule = Schedule();
+        expect(schedule.length).toBe(23);
+
+        const reducedSchedule = getUnassigned("3/29", schedule);
+        expect(reducedSchedule.length).toBe(7);
+        console.log('schedule',schedule);
+    /*
+        const schedule = Schedule();
+        const dates = GetDates(schedule);
+        expect(dates.length).toBe(10);
+        const theseDates = ["3/29", "4/5", "4/12", "4/19", "4/26", "5/3", "5/10", "5/17", "5/24", "5/31"];
+        expect(dates).toEqual(theseDates);
+     */
+    });
 
 });
 
